@@ -1,0 +1,39 @@
+﻿@using ChoiceWithAuth.ViewModels;
+
+@model RegisterAdminViewModel
+
+@{
+    ViewData["Title"] = "Register admin";
+}
+
+<h1>@ViewData["Title"]</h1>
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form id="account" method="post">
+                <div class="form-floating">
+                    <input asp-for="Name" class="form-control" aria-required="true" />
+                    <label asp-for="Name" class="form-label"></label>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-floating">
+                    <input asp-for="Password" type="password" class="form-control" aria-required="true" />
+                    <label asp-for="Password" class="form-label"></label>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-floating">
+                    <input asp-for="ConfirmPassword" type="password" class="form-control" aria-required="true" />
+                    <label asp-for="ConfirmPassword" class="form-label"></label>
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div>
+                    <button type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

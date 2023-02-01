@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Identity;
+
+@model IEnumerable<IdentityUser>
+
+@{
+    ViewData["Title"] = "Admins";
+}
+
+<h1>@ViewBag.Title</h1>
+<div>
+    <a asp-action="RegisterAdmin">Register admin</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => user.UserName)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
